@@ -1,0 +1,155 @@
+/* 主要内容布局 */
+main {
+    display: flex;
+    gap: 2rem;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    width: 80%;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* 左侧导航 */
+.side-nav {
+    flex: 0 0 200px;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.nav-item {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e1e4e8;
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.nav-item:last-child {
+    border-bottom: none;
+}
+
+.nav-item.active {
+    background: #3498db;
+    color: white;
+}
+
+.nav-item:hover:not(.active) {
+    background: #f8f9fa;
+    color: #3498db;
+}
+
+/* 右侧内容区域 */
+.content {
+    flex: 1;
+    overflow: auto;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e4e8;
+    scroll-margin-top: 100px; /* 添加滚动边距 */
+}
+
+/* 成员卡片 */
+.member-card {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.member-card:last-child {
+    border-bottom: none;
+}
+
+.member-photo {
+    flex: 0 0 200px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.member-info {
+    flex: 1;
+}
+
+.member-info h3 {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.member-info .title {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.member-info p {
+    margin: 0.5rem 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.member-links {
+    margin-top: 1.5rem;
+}
+
+.member-links a {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 1.5rem;
+}
+
+.member-links a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .side-nav {
+        position: relative;
+        top: 0;
+        flex: none;
+        margin-bottom: 1rem;
+    }
+
+    .member-card {
+        flex-direction: column;
+    }
+
+    .member-photo {
+        flex: none;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .member-info {
+        padding: 1rem 0;
+    }
+
+    .section-title {
+        margin: 1.5rem 0;
+        font-size: 1.5rem;
+    }
+}
